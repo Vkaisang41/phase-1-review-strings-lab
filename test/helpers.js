@@ -1,21 +1,25 @@
-const chai = require('chai')
-const sinon = require('sinon')
-global.expect = chai.expect
-const fs = require('fs')
-const jsdom = require('mocha-jsdom')
-const path = require('path')
-const babel = require('babel-core');
+require('@babel/register')({
+  presets: ['@babel/preset-env']
+});
 
-const html = fs.readFileSync(path.resolve(__dirname, '..', 'index.html'), 'utf-8')
+const chai = require('chai');
+const sinon = require('sinon');
+global.expect = chai.expect;
 
+const fs = require('fs');
+const path = require('path');
+const babel = require('@babel/core');
+
+// ✅ Set up a simulated DOM environment
+require('jsdom-global')();
+
+const html = fs.readFileSync(path.resolve(__dirname, '..', 'index.html'), 'utf-8');
+document.body.innerHTML = html;
+
+// ✅ Transpile and evaluate your JavaScript in the DOM environment
 const babelResult = babel.transformFileSync(
-  path.resolve(__dirname, '..', 'index.js'), {
-    presets: ['env']
-  }
+  path.resolve(__dirname, '..', 'index.js'),
+  { presets: ['@babel/preset-env'] }
 );
 
-const src = babelResult.code
-
-jsdom({
-  html, src
-});
+eval(babelResult.code); // executes your script in the test DOM
