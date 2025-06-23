@@ -23,3 +23,4 @@ const babelResult = babel.transformFileSync(
 );
 
 eval(babelResult.code); // executes your script in the test DOM
+

@@ -1,7 +1,20 @@
-const currentUser = "Grace Hopper";
+require('./helpers.js');
 
-const welcomeMessage = "Welcome to Flatbook, " + currentUser + "!";
+describe('index.js', function () {
+  it("defines currentUser as 'Grace Hopper'", function () {
+    expect(currentUser).to.equal('Grace Hopper');
+  });
 
-const excitedWelcomeMessage = "WELCOME TO FLATBOOK, " + currentUser.toUpperCase() + "!";
+  it('creates a welcome message', function () {
+    expect(welcomeMessage).to.equal('Welcome to Flatbook, Grace Hopper!');
+  });
 
-const shortGreeting = "Welcome, " + currentUser[0] + "!";
+  it('creates an excited welcome message', function () {
+    expect(excitedWelcomeMessage).to.equal('WELCOME TO FLATBOOK, GRACE HOPPER!');
+  });
+
+  it('creates a short greeting', function () {
+    expect(shortGreeting).to.equal('Welcome, G!');
+  });
+});
+

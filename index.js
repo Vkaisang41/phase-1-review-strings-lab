@@ -1,7 +1,7 @@
-const currentUser = "Grace Hopper";
+globalThis.currentUser = "Grace Hopper";
 
-const welcomeMessage = "Welcome to Flatbook, " + currentUser + "!";
+globalThis.welcomeMessage = "Welcome to Flatbook, " + currentUser + "!";
 
-const excitedWelcomeMessage = "WELCOME TO FLATBOOK, " + currentUser.toUpperCase() + "!";
+globalThis.excitedWelcomeMessage = "WELCOME TO FLATBOOK, " + currentUser.toUpperCase() + "!";
 
-const shortGreeting = "Welcome, " + currentUser[0] + "!";
+globalThis.shortGreeting = "Welcome, " + currentUser[0] + "!";
