@@ -1,4 +1,5 @@
 require('./helpers.js');
+require('../index.js');
 
 describe('index.js', function () {
   it("defines currentUser as 'Grace Hopper'", function () {
@@ -17,4 +18,3 @@ describe('index.js', function () {
     expect(shortGreeting).to.equal('Welcome, G!');
   });
 });
-

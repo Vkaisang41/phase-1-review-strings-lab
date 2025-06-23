@@ -1,7 +1,7 @@
-currentUser = "Grace Hopper";
+global.currentUser = 'Grace Hopper';
 
-welcomeMessage = `Welcome to Flatbook, ${currentUser}!`;
+global.welcomeMessage = 'Welcome to Flatbook, ' + global.currentUser + '!';
 
-excitedWelcomeMessage = `WELCOME TO FLATBOOK, ${currentUser.toUpperCase()}!`;
+global.excitedWelcomeMessage = global.welcomeMessage.toUpperCase();
 
-shortGreeting = `Welcome, ${currentUser.slice(0, 1)}!`;
+global.shortGreeting = 'Welcome, ' + global.currentUser[0] + '!';
