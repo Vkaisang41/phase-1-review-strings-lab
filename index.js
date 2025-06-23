@@ -1,7 +1,7 @@
-var currentUser = "Grace Hopper";
+var currentUser = 'Grace Hopper';
 
-var welcomeMessage = "Welcome to Flatbook, " + currentUser + "!";
+var welcomeMessage = 'Welcome to Flatbook, ' + currentUser + '!';
 
 var excitedWelcomeMessage = welcomeMessage.toUpperCase();
 
-var shortGreeting = "Welcome, " + currentUser[0] + "!";
+var shortGreeting = 'Welcome, ' + currentUser[0] + '!';
