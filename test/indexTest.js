@@ -1,5 +1,12 @@
 require('./helpers.js');
-require('../index.js');
+
+// ✅ Destructure the exports from index.js:
+const {
+  currentUser,
+  welcomeMessage,
+  excitedWelcomeMessage,
+  shortGreeting
+} = require('../index.js');
 
 describe('index.js', function () {
   it("defines currentUser as 'Grace Hopper'", function () {
